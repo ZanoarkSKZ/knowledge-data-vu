@@ -1,0 +1,15 @@
+@prefix ns1: <http://dbpedia.org/ontology/> .
+@prefix ns2: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+
+<http://example.com/kad/Amsterdam> ns1:population "907976" ;
+    ns2:lat "52.36666488647461" ;
+    ns2:long "4.900000095367432" .
+
+<http://example.com/kad/Berlin> ns1:population "3677472" ;
+    ns2:lat "52.52000045776367" ;
+    ns2:long "13.40499973297119" .
+
+<http://example.com/kad/Rotterdam> ns1:population "651157" ;
+    ns2:lat "51.91666793823242" ;
+    ns2:long "4.5" .
+
