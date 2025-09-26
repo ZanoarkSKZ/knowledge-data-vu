@@ -1,0 +1,61 @@
+@prefix ex: <http://example.com/vrijeuniversiteit/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:Course a rdfs:Class ;
+    rdfs:label "Course"@en .
+
+ex:Faculty a rdfs:Class ;
+    rdfs:label "Faculty"@en .
+
+ex:Professor a rdfs:Class ;
+    rdfs:label "Professor"@en ;
+    rdfs:subClassOf ex:Staff .
+
+ex:Staff a rdfs:Class ;
+    rdfs:label "Staff Team"@en .
+
+ex:Student a rdfs:Class ;
+    rdfs:label "Student"@en .
+
+ex:Beta a ex:Faculty ;
+    rdfs:label "Beta Faculty"@en ;
+    ex:offersCourse ex:DataScience .
+
+ex:John a ex:Professor ;
+    rdfs:label "John"@en ;
+    ex:teaches ex:DataScience .
+
+ex:Wick rdfs:label "Wick"@en ;
+    ex:enrolledIn ex:DataScience ;
+    ex:studiesAt ex:VU .
+
+ex:enrolledIn a rdf:Property ;
+    rdfs:label "enrolled in"@en ;
+    rdfs:domain ex:Student ;
+    rdfs:range ex:Course ;
+    rdfs:subPropertyOf ex:studiesCourse .
+
+ex:offersCourse a rdf:Property ;
+    rdfs:label "offers course"@en ;
+    rdfs:domain ex:Faculty ;
+    rdfs:range ex:Course .
+
+ex:studiesAt a rdf:Property ;
+    rdfs:label "studies"@en,
+        "studies at"@en ;
+    rdfs:domain ex:Student ;
+    rdfs:range ex:Course,
+        ex:Faculty .
+
+ex:teaches a rdf:Property ;
+    rdfs:label "teaches"@en ;
+    rdfs:domain ex:Professor ;
+    rdfs:range ex:Course .
+
+ex:VU a ex:Faculty ;
+    rdfs:label "Vrije Universiteit Amsterdam"@en .
+
+ex:DataScience a ex:Course ;
+    rdfs:label "Data Science"@en .
+
